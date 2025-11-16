@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Randa Oum Mohamed - Couture Professionnelle</title>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #0f0f0f;
+      margin: 0;
+      padding: 0;
+      color: #f2f2f2;
+      text-align: center;
+    }
+
+    :root {
+      --gold: #d4af37;
+      --gold-light: #f4e3a2;
+      --dark: #111;
+    }
+
+    header {
+      background: linear-gradient(135deg, #5e0000, #8b0000);
+      padding: 35px 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #5e0000;
+      font-weight: bold;
+      font-size: 1.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 12px #000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 800;
+      font-size: 2.1rem;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+
+    main {
+      max-width: 750px;
+      margin: 40px auto;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 20px #5e0000;
+    }
+
+    img.main-photo {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    h2.section-title {
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-top: 40px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .services-list li {
+      margin: 12px 0;
+      font-size: 1.15rem;
+      color: var(--gold-light);
+    }
+
+    .about-text {
+      background: #1f1f1f;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #333;
+      text-align: left;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 15px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #300;
+    }
+
+    .order-box {
+      margin-top: 20px;
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid var(--gold);
+    }
+    input, textarea {
+      width: 90%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #444;
+      background: #0f0f0f;
+      color: #fff;
+    }
+    a.order-btn {
+      background: var(--gold);
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #5e0000;
+      margin-top: 10px;
+      cursor: pointer;
+      width: 60%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-decoration: none;
+      text-align: center;
+    }
+    a.order-btn:hover {
+      background: var(--gold-light);
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 25px;
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">R•M</div>
+  <h1>Randa Oum Mohamed</h1>
+</header>
+
+<main>
+
+  <img src="photo1.jpg" class="main-photo">
+
+  <h2 class="section-title">Services</h2>
+  <ul class="services-list">
+    <li>✨ Couture professionnelle</li>
+    <li>🧵 RanDa, Caftan, Takchita</li>
+    <li>📏 Travail sur mesure</li>
+    <li>🎨 Design moderne + traditionnel</li>
+    <li>👗 Retouches et personnalisations</li>
+  </ul>
+
+  <h2 class="section-title">Portfolio</h2>
+  <div class="gallery-grid">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+  </div>
+
+  <h2 class="section-title">Passez une commande</h2>
+
+  <div class="order-box">
+    <input type="text" placeholder="Votre nom">
+    <input type="text" placeholder="Numéro WhatsApp">
+    <textarea rows="4" placeholder="Décrivez votre demande"></textarea>
+
+    <a class="order-btn" onclick="sendOrder()">Envoyer la commande</a>
+  </div>
+
+</main>
+
+<footer>
+  © 2024 – Couture Professionnelle Randa Oum Mohamed.
+</footer>
+
+<script>
+function sendOrder() {
+    let name = document.querySelector('input[placeholder="Votre nom"]').value;
+    let phone = document.querySelector('input[placeholder="Numéro WhatsApp"]').value;
+    let msg = document.querySelector('textarea').value;
+
+    let number = "212721508674";
+
+    let text =
+      "Nouvelle commande%0A" +
+      "Nom: " + name + "%0A" +
+      "Numéro: " + phone + "%0A" +
+      "Commande: " + msg;
+
+    window.location.href = "https://wa.me/" + number + "?text=" + text;
+}
+</script>
+
+</body>
+</html>
